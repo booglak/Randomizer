@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Randomizer</string>
+    <!--Start-->
+    <string name="tvRandomizer">Randomizer</string>
+    <string name="tvStart">Start</string>
+    <string name="tvExit">Exit</string>
+    <!--Kind-->
+    <string name="ibtnNumeric">Numeric</string>
+    <string name="ibtnObjects">Objects</string>
+    <string name="tvBorderKind">--------------------------------------------------------------------</string>
+    <!--Input-->
+    <string name="btnAdd">Добавить</string>
+    <string name="btnRandom">Random</string>
+    <string name="etInput">Ввод одной позиции</string>
+    <!--Result-->
+    <string name="btnResult">Еще раз</string>
 </resources>
