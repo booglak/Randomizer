@@ -15,7 +15,7 @@
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btnNumeric"
+        app:srcCompat="@drawable/btn_numeric"
         android:id="@+id/ibtnNumeric"
         android:contentDescription="@string/ibtnNumeric"
         android:background="?android:attr/selectableItemBackground" />
@@ -30,7 +30,7 @@
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/btnObjects"
+        app:srcCompat="@drawable/btn_objects"
         android:id="@+id/ibtnObjects"
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/ibtnObjects" />
