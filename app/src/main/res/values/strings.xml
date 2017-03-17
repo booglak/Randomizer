@@ -14,4 +14,7 @@
     <string name="etInput">Ввод</string>
     <!--Result-->
     <string name="btnResult">Еще раз</string>
+    <!--Menu-->
+    <string name="menu_list">Показать список</string>
+
 </resources>
