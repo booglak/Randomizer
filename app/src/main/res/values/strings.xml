@@ -11,7 +11,7 @@
     <!--Input-->
     <string name="btnAdd">Добавить</string>
     <string name="btnRandom">Random</string>
-    <string name="etInput">Ввод одной позиции</string>
+    <string name="etInput">Ввод</string>
     <!--Result-->
     <string name="btnResult">Еще раз</string>
 </resources>
