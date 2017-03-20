@@ -16,5 +16,9 @@
     <string name="btnResult">Еще раз</string>
     <!--Menu-->
     <string name="menu_list">Показать список</string>
+    <!--Range-->
+    <string name="tvRangeTitle">Введи диапазон чисел</string>
+    <string name="teRangeFrom">ОТ:</string>
+    <string name="teRangeTo">ДО:</string>
 
 </resources>
