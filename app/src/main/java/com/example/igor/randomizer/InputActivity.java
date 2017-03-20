@@ -3,6 +3,7 @@ package com.example.igor.randomizer;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -24,7 +25,7 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
     EditText etInput;
     Button btnAdd;
     Button btnRandom;
-    ArrayList randomList;
+    static ArrayList randomList;
 
     //Пункты контекстного меню
     public static final int CON_MEN_RANGE = 101;
@@ -52,7 +53,6 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
         }
 
         randomList = new ArrayList();
-
     }
 
     @Override
@@ -72,6 +72,8 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.btnRandom:
+                Intent intent = new Intent(this, AnimActivity.class);
+                startActivity(intent);
                 break;
         }
 
@@ -167,8 +169,6 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                                         for (int i = Integer.parseInt(userInputFrom.getText().toString()); i < Integer.parseInt(userInputTo.getText().toString())+1; i++){
                                             randomList.add(i);
                                         }
-
-
                                     }
                                 })
                         .setNegativeButton("Отмена",
@@ -179,16 +179,8 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                                 });
                 AlertDialog alertDialog = mDialogBuilder.create();
                 alertDialog.show();
-
-
-
-
-
                 break;
         }
         return true;
     }
-
-
-
 }
