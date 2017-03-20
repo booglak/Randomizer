@@ -1,17 +1,21 @@
 package com.example.igor.randomizer;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static com.example.igor.randomizer.R.id.menu_list;
 
 public class InputActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -54,6 +58,7 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                 }
                 else {
                     randomList.add(etInput.getText().toString());
+                    etInput.setText("");
                 }
                 System.out.println(randomList.size());
                 break;
@@ -76,17 +81,40 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
         return true;
     }
 
-    public void onMenuListClick(){
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // получим идентификатор выбранного пункта меню
+        int id = item.getItemId();
 
-        String[] items = new String[randomList.size()];
-        for (int i = 0; i < randomList.size(); i++) {
-            items[i] = randomList.get(i).toString();
+        // Операции для выбранного пункта меню
+        switch (id) {
+            case menu_list:
+                final String [] items = new String[randomList.size()];
+                for (int i = 0; i < randomList.size(); i++){
+                    items[i] = randomList.get(i).toString();
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(InputActivity.this);
+                builder.setTitle("Список Рандом")
+                        .setCancelable(true);
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int item) {
+                        // TODO Auto-generated method stub
+                        Toast.makeText(getApplicationContext(),
+                                "Нажми RANDOM",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        AlertDialog.Builder listResult = new AlertDialog.Builder(this);
-        listResult.setTitle("Список");
-        listResult.setItems(items, (DialogInterface.OnClickListener) this);
-
     }
+
+
+
 }
