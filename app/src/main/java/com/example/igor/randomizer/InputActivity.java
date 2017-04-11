@@ -66,6 +66,7 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                 }
                 else {
                     randomList.add(etInput.getText().toString());
+                    etInput.setHint(etInput.getText().toString());
                     etInput.setText("");
                 }
                 System.out.println(randomList.size());
@@ -168,6 +169,8 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
 
                                         for (int i = Integer.parseInt(userInputFrom.getText().toString()); i < Integer.parseInt(userInputTo.getText().toString())+1; i++){
                                             randomList.add(i);
+                                            etInput.setHint("От " + userInputFrom.getText().toString()
+                                            + " до " + userInputTo.getText().toString());
                                         }
                                     }
                                 })
