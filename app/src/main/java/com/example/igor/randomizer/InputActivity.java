@@ -22,7 +22,7 @@ import static com.example.igor.randomizer.R.id.menu_list;
 
 public class InputActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText etInput;
+    static EditText etInput;
     Button btnAdd;
     Button btnRandom;
     static ArrayList randomList;
@@ -53,6 +53,7 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
         }
 
         randomList = new ArrayList();
+
     }
 
     @Override
@@ -73,8 +74,15 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.btnRandom:
-                Intent intent = new Intent(this, AnimActivity.class);
-                startActivity(intent);
+                if (randomList.size() == 0){
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Нечего рандомить, товарищи", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else {
+                    Intent intent = new Intent(this, AnimActivity.class);
+                    startActivity(intent);
+                }
                 break;
         }
 

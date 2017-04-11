@@ -9,7 +9,7 @@ public class InputRandom {
     int randomResult;
     String result;
 
-    public String InputR(ArrayList array){
+    public String Result3 (ArrayList array){
         Random random = new Random();
         randomResult = random.nextInt(array.size());
         result = array.get(randomResult).toString();
